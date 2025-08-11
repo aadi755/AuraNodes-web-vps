@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AuraNodes VPS Hosting — VIM PLAN</title>
+  <title>AuraNodes VPS Hosting — VIM & MASTER PLAN</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
   <style>
@@ -35,13 +35,12 @@
       max-width:1100px;
       margin:0 auto;
       display:grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr;
       gap:28px;
       align-items:start;
     }
 
     header{
-      grid-column:1 / -1;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -68,13 +67,11 @@
     }
     nav a.cta{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));box-shadow:0 6px 20px rgba(7,10,21,0.6);}
 
-    /* Hero */
     .hero{
       padding:28px;
       border-radius:var(--radius);
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       box-shadow: 0 6px 30px rgba(2,6,23,0.6);
-      min-height:260px;
     }
     .hero h2{font-size:30px;margin:0 0 10px 0;line-height:1.06}
     .hero p{margin:0 0 18px 0;color:var(--muted);font-size:15px}
@@ -93,7 +90,12 @@
       display:flex;gap:10px;align-items:center;
     }
 
-    /* Plan card */
+    .plans-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
     .card{
       padding:22px;border-radius:18px;background:var(--card);backdrop-filter: blur(6px);
       border:1px solid rgba(255,255,255,0.03);
@@ -118,15 +120,7 @@
     }
 
     .footer{
-      grid-column:1 / -1;margin-top:28px;text-align:center;color:var(--muted);font-size:13px;
-    }
-
-    /* Responsive */
-    @media (max-width:980px){
-      .container{grid-template-columns:1fr; padding-bottom:40px;}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      .hero{order:2}
-      .card{order:1}
+      margin-top:28px;text-align:center;color:var(--muted);font-size:13px;
     }
   </style>
 </head>
@@ -151,14 +145,15 @@
     <main class="hero">
       <div class="badges">
         <div class="badge">⚡ VIM PLAN</div>
+        <div class="badge">⚡ MASTER PLAN</div>
         <div class="badge">Full Root Access</div>
         <div class="badge">No Mining Allowed</div>
       </div>
 
-      <h2>390 GB RAM • Intel Xeon 48 Core • 2.31 TB SSD</h2>
-      <p>High-performance VPS for power users — development, hosting, containers, and more. Perfect for intensive workloads where uptime and raw resources matter.</p>
+      <h2>High-performance VPS for serious workloads</h2>
+      <p>Powerful plans designed for development, hosting, and compute-heavy projects.</p>
 
-      <div class="features" aria-hidden="false">
+      <div class="features">
         <div class="feature"><i class="fas fa-tachometer-alt" style="width:20px"></i> Dedicated compute power</div>
         <div class="feature"><i class="fas fa-shield-alt" style="width:20px"></i> DDoS protected nodes</div>
         <div class="feature"><i class="fas fa-wifi" style="width:20px"></i> 6 Gbps uplink</div>
@@ -166,39 +161,66 @@
       </div>
     </main>
 
-    <aside class="card" id="plans">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <div class="plan-title">
-            <h3>⚡ VIM PLAN ⚡</h3>
-            <div class="plan-price">₹150 / 1 month</div>
+    <div class="plans-grid" id="plans">
+      <!-- VIM PLAN -->
+      <aside class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="plan-title">
+              <h3>⚡ VIM PLAN ⚡</h3>
+              <div class="plan-price">₹150 / 1 month</div>
+            </div>
+            <small style="color:var(--muted)">Perfect for high-demand projects — limited slots.</small>
           </div>
-          <small style="color:var(--muted)">Perfect for high-demand projects — limited slots.</small>
+          <div style="text-align:right">
+            <div style="font-size:12px;color:var(--muted)">SKU</div>
+            <div style="font-weight:800">VIM-1</div>
+          </div>
         </div>
-        <div style="text-align:right">
-          <div style="font-size:12px;color:var(--muted)">SKU</div>
-          <div style="font-weight:800">VIM-1</div>
+        <div class="specs">
+          <div class="spec"><div>💻  RAM</div><div>390 GB</div></div>
+          <div class="spec"><div>🛩️ CPU</div><div>Intel Xeon 48 Core</div></div>
+          <div class="spec"><div>💾 Storage</div><div>2.31 TB SSD</div></div>
+          <div class="spec"><div>🔞 Duration</div><div>1 Month</div></div>
         </div>
-      </div>
+        <div class="note">🔒 Full Root Access — <strong>Mining not allowed</strong>. Violations will result in immediate termination.</div>
+        <div class="btns">
+          <button class="btn" onclick="window.open(DISCORD_INVITE,'_blank')">Buy Now — ₹150</button>
+          <button class="btn ghost" onclick="window.open(GITHUB_URL,'_blank')"><i class="fab fa-github" style="margin-right:8px"></i>View on GitHub</button>
+        </div>
+      </aside>
 
-      <div class="specs" style="margin-top:14px">
-        <div class="spec"><div>💻  RAM</div><div>390 GB</div></div>
-        <div class="spec"><div>🛩️ CPU</div><div>Intel Xeon 48 Core</div></div>
-        <div class="spec"><div>💾 Storage</div><div>2.31 TB SSD</div></div>
-        <div class="spec"><div>🔞 Duration</div><div>1 Month</div></div>
-      </div>
+      <!-- MASTER PLAN -->
+      <aside class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="plan-title">
+              <h3>⚡ MASTER PLAN ⚡ <span style="font-size:12px;color:gold">Recommended</span></h3>
+              <div class="plan-price">₹160 / Lifetime</div>
+            </div>
+            <small style="color:var(--muted)">Best value for lifetime usage — ultimate performance.</small>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:12px;color:var(--muted)">SKU</div>
+            <div style="font-weight:800">MASTER-1</div>
+          </div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div>💻  RAM</div><div>64 GB</div></div>
+          <div class="spec"><div>🛩️ CPU</div><div>AMD Ryzen 9 7900 48 Core</div></div>
+          <div class="spec"><div>💾 Storage</div><div>313.91 GB SSD</div></div>
+          <div class="spec"><div>💵 Price</div><div>₹160</div></div>
+          <div class="spec"><div>🔞 Duration</div><div>Lifetime</div></div>
+        </div>
+        <div class="note">🔒 Full Root Access — <strong>Mining not allowed</strong>. Violations will result in immediate termination.</div>
+        <div class="btns">
+          <button class="btn" onclick="window.open(DISCORD_INVITE,'_blank')">Buy Now — ₹160</button>
+          <button class="btn ghost" onclick="window.open(GITHUB_URL,'_blank')"><i class="fab fa-github" style="margin-right:8px"></i>View on GitHub</button>
+        </div>
+      </aside>
+    </div>
 
-      <div class="note">🔒 Full Root Access — <strong>Mining not allowed</strong>. Violations will result in immediate termination.</div>
-
-      <div class="btns">
-        <button class="btn" id="buyBtn">Buy Now — ₹150</button>
-        <button class="btn ghost" id="githubBtn"><i class="fab fa-github" style="margin-right:8px"></i>View on GitHub</button>
-      </div>
-
-      <div style="margin-top:14px;font-size:13px;color:var(--muted)">Questions? Join our Discord for instant support.</div>
-    </aside>
-
-    <section style="padding:18px;border-radius:14px;background:transparent;grid-column:1 / -1">
+    <section style="padding:18px;border-radius:14px;background:transparent">
       <h3 id="faq">FAQ</h3>
       <details style="margin:8px 0;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)">
         <summary style="cursor:pointer">How do I pay?</summary>
@@ -211,25 +233,17 @@
     </section>
 
     <div class="footer">
-      © <span id="yr"></span> AuraNodes VPS Hosting • Built with ❤️  ©  All Rights Reserved
+      © <span id="yr"></span> AuraNodes VPS Hosting • Built with ❤️ •  © All Rights Reserved
     </div>
   </div>
 
   <script>
     document.getElementById('yr').innerText = new Date().getFullYear();
-
     const DISCORD_INVITE = "https://discord.gg/AYat4hbyPR";
-    const GITHUB_URL = "https://github.com/aadi755/"; // change to your repo
-
-    document.getElementById('buyBtn').addEventListener('click', () => {
-      window.open(DISCORD_INVITE, "_blank");
-    });
-    document.getElementById('topBuy').addEventListener('click', (e) => {
+    const GITHUB_URL = "https://github.com/aadi755/";
+    document.getElementById('topBuy').addEventListener('click', e => {
       e.preventDefault();
       window.open(DISCORD_INVITE, "_blank");
-    });
-    document.getElementById('githubBtn').addEventListener('click', () => {
-      window.open(GITHUB_URL, "_blank");
     });
   </script>
 </body>
